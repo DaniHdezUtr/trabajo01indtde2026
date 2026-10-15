@@ -1,0 +1,63 @@
+---
+title: "Trabajo Individual: Teoría de la Decisión bajo Incertidumbre"
+author: "Daniel Hernández Utrilla"
+format:
+  html: default
+  pdf:
+    pdf-engine: typst
+editor: visual
+---
+
+## Introducción
+
+En esta parte del trabajo se van a presentar dos problemas inventados relacionados con la Teoría de la Decisión bajo Incertidumbre que se resolverán siguiendo los métodos vistos en clase, usando el programa RStudio.
+
+## Enunciados
+
+### Problema 1:
+
+Una compañía dedicada al entretenimiento digital está evaluando en qué plataforma debe invertir su presupuesto para el desarrollo de licencias, centrándose en cuatro opciones principales (PlayStation5, Xbox Series X, Nintendo Switch 2, PCs de gama alta). Los beneficios netos esperados (en millones de euros) durante el primer año en función de tres posibles escenarios de cuota de mercado e interés del público vienen dados por la siguiente matriz:
+
+| Plataforma | $e_1$ (Demanda baja) | $e_2$ (Demanda moderada) | $e_3$ (Éxito masivo) |
+|:---|:--:|:--:|:--:|
+| $d_1$ (PlayStation 5) | 18 | 42 | 95 |
+| $d_2$ (Xbox Series X) | 25 | 55 | 75 |
+| $d_3$ (Nintendo Switch 2) | 12 | 28 | 110 |
+| $d_4$ (PC de Gama Alta) | 40 | 40 | 40 |
+
+**Resuelva el problema usando todos los métodos e indique si son verdaderas o falsas las siguientes cuestiones:**
+
+1.  Siguiendo el criterio optimista en situación favorable, la alternativa seleccionada es $d_3$ (Nintendo Switch 2).
+
+2.  El criterio de Wald selecciona la alternativa $d_4$ (PC de Gama Alta) como la opción más conservadora.
+
+3.  El criterio de Laplace determina que la mejor alternativa es $d_1$ (PlayStation 5).
+
+4.  El criterio de Hurwicz con un índice de optimismo $\alpha = 0.5$ indica que la mejor decisión es $d_3$ (Nintendo Switch 2).
+
+5.  El criterio de Savage selecciona la alternativa $d_2$ (Xbox Series X).
+
+### Problema 2:
+
+Red Eléctrica y un consorcio de productores andaluces están planificando la asignación de capacidad de retoma y transporte para la integración de nueva potencia de generación limpia en la red de alta tensión de la comunidad autónoma. Para ello, se debe decidir qué tecnología priorizar entre cuatro alternativas reales de desarrollo tecnológico (Planta Solar Fotovoltaica en suelo, Parque Eólico Terrestre, Central Termosolar de concentración con almacenamiento térmico, Planta de Hidrógeno Verde asociada a nudo eléctrico).
+
+Los costes totales reales estimados (expresados en millones de euros, incluyendo inversión CAPEX, costes operativos OPEX a 20 años y penalizaciones por desvíos o restricciones técnicas de red) varían en función de cuatro escenarios macroeconómicos y regulatorios del mercado eléctrico español:
+
+| Tecnología | $e_1$ (Marco estable) | $e_2$ (Incremento costes) | $e_3$ (Crisis suministros) | $e_4$ (Saturación nudos) |
+|:---|:--:|:--:|:--:|:--:|
+| $d_1$ (Solar Fotovoltaica) | 22 | 35 | 55 | 68 |
+| $d_2$ (Eólico Terrestre) | 28 | 32 | 48 | 62 |
+| $d_3$ (Central Termosolar) | 30 | 38 | 50 | 58 |
+| $d_4$ (Hidrógeno Verde) | 35 | 45 | 70 | 80 |
+
+**Resuelva el problema en una única tabla e indique si son verdaderas o falsas:**
+
+1.  Al tratarse de una situación desfavorable, el criterio de Laplace identifica como la alternativa de menor coste medio a $d_2$ (Eólico Terrestre).
+
+2.  El criterio de minimización del coste máximo (Wald aplicado a costes) selecciona la opción $d_3$ (Central Termosolar) como la más segura frente al peor escenario.
+
+3.  El método de Hurwicz con un coeficiente de optimismo $\alpha = 0.5$ sitúa a la opción $d_1$ (Solar Fotovoltaica) como la mejor alternativa de coste mínimo.
+
+4.  El criterio de Savage para costes indica que la alternativa óptima es el $d_4$ (Hidrógeno Verde).
+
+5.  La tabla resumen conjunta obtenida muestra que la alternativa $d_2$ (Eólico Terrestre) es una de las más estables frente al coste global máximo.

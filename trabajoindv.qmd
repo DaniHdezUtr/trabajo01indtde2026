@@ -28,13 +28,13 @@ Una compañía dedicada al entretenimiento digital está evaluando en qué plata
 
 1.  Siguiendo el criterio optimista en situación favorable, la alternativa seleccionada es $d_3$ (Nintendo Switch 2).
 
-2.  El criterio de Wald selecciona la alternativa $d_4$ (PC de Gama Alta) como la opción más conservadora.
+2.  El criterio de Wald bajo situación desfavorable selecciona la alternativa $d_4$ (PC de Gama Alta) como la opción más conservadora.
 
-3.  El criterio de Laplace determina que la mejor alternativa es $d_1$ (PlayStation 5).
+3.  El criterio de Laplace en situación desfavorable determina que la mejor alternativa es $d_1$ (PlayStation 5).
 
-4.  El criterio de Hurwicz con un índice de optimismo $\alpha = 0.5$ indica que la mejor decisión es $d_3$ (Nintendo Switch 2).
+4.  El criterio de Hurwicz con un índice de optimismo $\alpha = 0.5$ indica que la mejor decisión es $d_3$ (Nintendo Switch 2) en situación favorable.
 
-5.  El criterio de Savage selecciona la alternativa $d_2$ (Xbox Series X).
+5.  El criterio de Savage en situación favorable selecciona la alternativa $d_2$ (Xbox Series X).
 
 ### Problema 2:
 

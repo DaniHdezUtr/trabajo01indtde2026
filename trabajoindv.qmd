@@ -5,7 +5,6 @@ format:
   html: default
   pdf:
     pdf-engine: typst
-editor: visual
 ---
 
 ## Introducción
@@ -16,16 +15,16 @@ En esta parte del trabajo se van a presentar dos problemas inventados relacionad
 
 ### Problema 1:
 
-Una compañía dedicada al entretenimiento digital está evaluando en qué plataforma debe invertir su presupuesto para el desarrollo de licencias, centrándose en cuatro opciones principales (PlayStation5, Xbox Series X, Nintendo Switch 2, PCs de gama alta). Los beneficios netos esperados (en millones de euros) durante el primer año en función de tres posibles escenarios de cuota de mercado e interés del público vienen dados por la siguiente matriz:
+Una compañía dedicada al entretenimiento digital está evaluando en qué plataforma debe invertir su presupuesto para el desarrollo de licencias, centrándose en cuatro opciones principales (PlayStation5, Xbox Series X, Nintendo Switch 2, PCs de gama alta), nos dan la siguiente matriz, a poderse interpretar tanto en caso favorable(beneficios) como desfavorable(costes):
 
 | Plataforma | $e_1$ (Demanda baja) | $e_2$ (Demanda moderada) | $e_3$ (Éxito masivo) |
-|:---|:--:|:--:|:--:|
+|:-----------------|:----------------:|:----------------:|:----------------:|
 | $d_1$ (PlayStation 5) | 18 | 42 | 95 |
 | $d_2$ (Xbox Series X) | 25 | 55 | 75 |
 | $d_3$ (Nintendo Switch 2) | 12 | 28 | 110 |
 | $d_4$ (PC de Gama Alta) | 40 | 40 | 40 |
 
-**Resuelva el problema usando todos los métodos e indique si son verdaderas o falsas las siguientes cuestiones:**
+**Resuelva el problema usando todos los métodos, en casos favorables y desfavorables, e indique si son verdaderas o falsas las siguientes cuestiones:**
 
 1.  Siguiendo el criterio optimista en situación favorable, la alternativa seleccionada es $d_3$ (Nintendo Switch 2).
 
@@ -44,7 +43,7 @@ Red Eléctrica y un consorcio de productores andaluces están planificando la as
 Los costes totales reales estimados (expresados en millones de euros, incluyendo inversión CAPEX, costes operativos OPEX a 20 años y penalizaciones por desvíos o restricciones técnicas de red) varían en función de cuatro escenarios macroeconómicos y regulatorios del mercado eléctrico español:
 
 | Tecnología | $e_1$ (Marco estable) | $e_2$ (Incremento costes) | $e_3$ (Crisis suministros) | $e_4$ (Saturación nudos) |
-|:---|:--:|:--:|:--:|:--:|
+|:--------------|:-------------:|:-------------:|:-------------:|:-------------:|
 | $d_1$ (Solar Fotovoltaica) | 22 | 35 | 55 | 68 |
 | $d_2$ (Eólico Terrestre) | 28 | 32 | 48 | 62 |
 | $d_3$ (Central Termosolar) | 30 | 38 | 50 | 58 |

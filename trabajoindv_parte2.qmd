@@ -25,15 +25,15 @@ Una compañía dedicada al entretenimiento digital está evaluando en qué plata
 
 **Resuelva el problema usando todos los métodos, en casos favorables y desfavorables, e indique si son verdaderas o falsas las siguientes cuestiones:**
 
-Siguiendo el criterio optimista en situación favorable, la alternativa seleccionada es $d_3$ (Nintendo Switch 2).
+1.  Siguiendo el criterio optimista en situación favorable, la alternativa seleccionada es $d_3$ (Nintendo Switch 2).
 
-El criterio de Wald selecciona la alternativa $d_4$ (PC de Gama Alta) como la opción más conservadora.
+2.  El criterio de Wald bajo situación desfavorable selecciona la alternativa $d_4$ (PC de Gama Alta) como la opción más conservadora.
 
-El criterio de Laplace determina que la mejor alternativa es $d_1$ (PlayStation 5).
+3.  El criterio de Laplace en situación desfavorable determina que la mejor alternativa es $d_1$ (PlayStation 5).
 
-El criterio de Hurwicz con un índice de optimismo $\alpha = 0.5$ indica que la mejor decisión es $d_3$ (Nintendo Switch 2).
+4.  El criterio de Hurwicz con un índice de optimismo $\alpha = 0.5$ indica que la mejor decisión es $d_3$ (Nintendo Switch 2) en situación favorable.
 
-El criterio de Savage selecciona la alternativa $d_2$ (Xbox Series X).
+5.  El criterio de Savage en situación favorable selecciona la alternativa $d_2$ (Xbox Series X).
 
 #### Resolución
 
@@ -56,9 +56,9 @@ print(tabla_dec1)
 Resolvemos con cada uno de los criterios:
 
 ```{r}
-cat("\n=====================================================\n")
+
 cat("          CASO A: SITUACIÓN FAVORABLE (BENEFICIOS)   \n")
-cat("=====================================================\n")
+
 
 cat("\n-- Criterio de Wald --\n")
 criterio.Wald(tabla_dec1, favorable = TRUE)
@@ -75,9 +75,9 @@ criterio.Savage(tabla_dec1, favorable = TRUE)
 cat("\n-- Criterio de Hurwicz (alfa = 0.5) --\n")
 criterio.Hurwicz(tabla_dec1, alfa = 0.5, favorable = TRUE)
 
-cat("\n=====================================================\n")
+
 cat("        CASO B: SITUACIÓN DESFAVORABLE (COSTES)      \n")
-cat("=====================================================\n")
+
 
 cat("\n1. Criterio de Wald (Minimax / Pesimista):\n")
 print(criterio.Wald(tabla_dec1, favorable = FALSE))
@@ -94,6 +94,19 @@ print(criterio.Savage(tabla_dec1, favorable = FALSE))
 cat("\n5. Criterio de Hurwicz (alfa = 0.5):\n")
 print(criterio.Hurwicz(tabla_dec1, alfa = 0.5, favorable = FALSE))
 ```
+Ahora comprobamos si las afirmaciones del enunciado son verdaderas o falsas:
+
+1. Verdadero, en situación favorable (beneficios), el criterio optimista busca el valor máximo absoluto de toda la matriz (Maximax). Los valores máximos de cada fila son: $d_1 (95)$, $d_2 (75)$, $d_3 (110)$, $d_4 (40)$. El máximo absoluto es 110, que corresponde a $d_3$.
+
+2. Verdadero, en situación desfavorable (costes), el criterio de Wald evalúa el peor escenario de cada alternativa (el coste máximo de cada fila) y selecciona el menor de ellos (Minimax). Los valores máximos por fila son: $d_1 (95)$, $d_2 (75)$, $d_3 (110)$ y $d_4 (40)$. El menor de todos esos "peores escenarios" es 40, correspondiente a $d_4$.
+
+3. Falso, en situación desfavorable (costes), Laplace calcula la media de cada alternativa y busca la de menor valor.  $d_1$: (18 + 42 + 95) / 3 = 51.67,  $d_2$: (25 + 55 + 75) / 3 = 51.67,  $d_3$: (12 + 28 + 110) / 3 = 50.00,  $d_4$: (40 + 40 + 40) / 3 = 40.00La mejor alternativa (la que tiene menor media) es $d_4$ (40), no $d_1$.
+
+4. Verdadero, en situación favorable, ponderamos el mejor y el peor valor de cada fila: $0.5 \times \text{Máximo} + 0.5 \times \text{Mínimo}$.
+$d_1$: 0.5(95) + 0.5(18) = 56.5,  $d_2$: 0.5(75) + 0.5(25) = 50.0,  $d_3$: 0.5(110) + 0.5(12) = 61.0,  $d_4$: 0.5(40) + 0.5(40) = 40.0La alternativa con el valor ponderado más alto es $d_3$ (61.0).
+
+5. Falso, Savage calcula la matriz de arrepentimiento restando cada valor al máximo de su columna ($e_1=40, e_2=55, e_3=110$). Los máximos arrepentimientos (peor perjuicio) por alternativa son:   $d_1$: (40-18=22, 55-42=13, 110-95=15) $\rightarrow$ Máximo = 22,   $d_2$: (40-25=15, 55-55=0, 110-75=35) $\rightarrow$ Máximo = 35,   $d_3$: (40-12=28, 55-28=27, 110-110=0) $\rightarrow$ Máximo = 28,   $d_4$: (40-40=0, 55-40=15, 110-40=70) $\rightarrow$ Máximo = 70.
+La alternativa óptima es la que minimiza este máximo arrepentimiento. El menor valor de arrepentimiento máximo es 22, correspondiente a $d_1$ (PlayStation 5), y no $d_2$.
 
 ### Problema 2:
 
@@ -126,12 +139,30 @@ Definimos la matriz de decisión:
 
 ```{r}
 tabla_dec2 <- matrix(
-  c(120,  80,  95,
-    150,  60, 110,
-    100,  90,  85),
-  nrow = 3, byrow = TRUE)
+  c(22, 35, 55, 68,
+    28, 32, 48, 62,
+    30, 38, 50, 58,
+    35, 45, 70, 80),
+  nrow = 4, byrow = TRUE)
 
-rownames(tabla_p2 <- c("Solar_Fotovoltaica", "Eolica", "Biomasa"))
-colnames(tabla_p2 <- c("Escenario_Seco", "Escenario_Medio", "Escenario_Lluvioso"))
+rownames(tabla_dec2) <- c("Solar Fotovoltaica", "Eolico Terrestre", "Central Termosolar","Hidrógeno Verde")
+colnames(tabla_dec2) <- c("Marco estable", "Incremento costes", "Crisis suministros", "Saturación nudos")
 print(tabla_dec2)
 ```
+Resolvemos en una única tabla:
+
+```{r}
+resultado_prob2<- criterio.Todos(tabla_dec2, alfa = 0.5, favorable = FALSE)
+print(resultado_prob2)
+```
+Ahora comprobamos si las afirmaciones del enunciado son verdaderas o falsas:
+
+1. Verdadero, calculando la media aritmética de cada alternativa: $d_1$ (45), $d_2$ (42.5), $d_3$ (44) y $d_4$ (57.5). La de menor coste medio es $d_2$.
+
+2. Verdadero, los costes máximos (peores escenarios) son: $d_1$ (68), $d_2$ (62), $d_3$ (58), $d_4$ (80). El menor de estos costes máximos es 58, que corresponde a $d_3$.
+
+3. Falso, ponderando el coste mínimo y máximo al 50%: $d_1$ (45), $d_2$ (45), $d_3$ (44) y $d_4$ (57.5). La mejor alternativa (la de menor valor ponderado) es $d_3$, no $d_1$.
+
+4. Falso, calculando la matriz de arrepentimiento restando el mínimo de cada columna ($e_1=22,  e_2=32,  e_3=48,  e_4=58$). Los arrepentimientos máximos resultantes son: $d_1$ (10), $d_2$ (6), $d_3$ (8) y $d_4$ (22). La alternativa óptima es la que tiene el menor arrepentimiento máximo, que es $d_2$ (6). La opción $d_4$ es la peor de todas.
+
+5. Verdadero, observando los datos, $d_2$ gana en Laplace y Savage, y en Wald se queda muy cerca de la óptima con un máximo acotado (62), evitando los grandes picos de riesgo de $d_1$ y $d_4$.

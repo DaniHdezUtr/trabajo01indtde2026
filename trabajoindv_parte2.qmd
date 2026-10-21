@@ -3,8 +3,7 @@ title: "Trabajo Individual Parte 2"
 author: "Daniel Hernández Utrilla"
 format:
   html: default
-  pdf:
-    pdf-engine: typst
+  typst: default
 ---
 
 ## Introducción

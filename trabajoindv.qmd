@@ -15,7 +15,7 @@ En esta parte del trabajo se van a presentar dos problemas inventados relacionad
 
 ### Problema 1:
 
-Una compañía dedicada al entretenimiento digital está evaluando en qué plataforma debe invertir su presupuesto para el desarrollo de licencias, centrándose en cuatro opciones principales (PlayStation5, Xbox Series X, Nintendo Switch 2, PCs de gama alta), nos dan la siguiente matriz, a poderse interpretar tanto en caso favorable(beneficios) como desfavorable(costes):
+Una compañía dedicada al entretenimiento digital está evaluando en qué plataforma debe invertir su presupuesto para el desarrollo de licencias, centrándose en cuatro opciones principales (PlayStation5, Xbox Series X, Nintendo Switch 2, PCs de gama alta), nos dan la siguiente matriz, a poderse interpretar tanto en caso favorable (beneficios) como desfavorable (costes):
 
 | Plataforma | $e_1$ (Demanda baja) | $e_2$ (Demanda moderada) | $e_3$ (Éxito masivo) |
 |:-----------------|:----------------:|:----------------:|:----------------:|
